@@ -1,0 +1,33 @@
+<h1>Video Games DB</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+
+    <thead class="table-dark">
+      <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Publisher</th>
+        <th>Genre</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @games.each do |g| %>
+        <tr>
+          <td><%= g.title %></td>
+          <td><%= g.year.blank? ? 'N/A' : g.year %></td>
+          <td><%= g.publisher.blank? ? 'N/A' : g.publisher %></td>
+          <td><%= g.genre.blank? ? 'N/A' : g.genre %> </td>
+          <td>delete</td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>
+
+<p>
+  Create video game
+</p>
